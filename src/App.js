@@ -16,12 +16,12 @@ function App() {
     <BrowserRouter>
       <Navbar title="TextUtils"/>
       <Routes>
-        <Route exact path={"/"} element={
+        <Route exact path={"/Text-Utils"} element={
             <div className="container">
               <TestForm heading="Enter the text to modify" />
             </div>
         } />
-        <Route exact path={"/about"} element={<About/>} />
+        <Route exact path={"/Text-Utils/about"} element={<About/>} />
         
       </Routes>
           

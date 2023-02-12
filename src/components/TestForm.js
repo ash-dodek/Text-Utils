@@ -6,6 +6,9 @@ export default function TestForm(props) {
   const [ans, setAns] = useState("")
   const [shouldAlert, setAlert] = useState(false)
   // setText("here")
+  const removeItems = ()=>{
+    setAns("")
+  }
   const handleUpClick = () => {
       setAns(text.toUpperCase())
       setText("")
@@ -33,6 +36,8 @@ export default function TestForm(props) {
         <h3>Result</h3>
         <textarea disabled placeholder="Result will be shown here" value={ans} className="form-control"
           id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button className="btn btn-primary my-3" onClick={removeItems}>Clear</button>
+
         <h5>No of words: {text.split(" ").length}</h5>
         <h5>No of characters: {text.length}</h5>
       </div>
