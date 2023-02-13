@@ -4,23 +4,40 @@ import React, { useState } from 'react'
 export default function TestForm(props) {
   const [text, setText] = useState("")
   const [ans, setAns] = useState("")
-  const [shouldAlert, setAlert] = useState(false)
+  const [WordCount, setWordCount] = useState(0)
   // setText("here")
+  const copyText = ()=>{
+    let copiedText = document.getElementById("result");
+    copiedText.select();
+    copiedText.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(copiedText.value);
+    
+  }
+  
   const removeItems = ()=>{
     setAns("")
   }
   const handleUpClick = () => {
-      setAns(text.toUpperCase())
-      setText("")
+    setAns(text.toUpperCase().trim())
+    setText("")
+    setWordCount(0)
   }
   const handleLowerClick = () => {
-    setAns(text.toLowerCase())
+    setAns(text.toLowerCase().trim())
     setText("")
+    setWordCount(0)
   }
   const handleCapClick = () => {
+    
+    setWordCount(0)
   }
   const onChange = (event) => {
     setText(event.target.value)
+    if (text === "" || text === " ") {
+      setWordCount(0)
+    } else {
+      setWordCount(text.split(" ").length)
+    }
   }
   return (
     <>
@@ -35,10 +52,11 @@ export default function TestForm(props) {
       <div className="container my-5">
         <h3>Result</h3>
         <textarea disabled placeholder="Result will be shown here" value={ans} className="form-control"
-          id="exampleFormControlTextarea1" rows="3"></textarea>
+          id="result" rows="3"></textarea>
         <button className="btn btn-primary my-3" onClick={removeItems}>Clear</button>
+        <button className="btn btn-primary my-3 mx-2" onClick={copyText}>Copy Text</button>
 
-        <h5>No of words: {text.split(" ").length}</h5>
+        <h5>No of words: {WordCount}</h5>
         <h5>No of characters: {text.length}</h5>
       </div>
 
