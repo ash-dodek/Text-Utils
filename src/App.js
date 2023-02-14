@@ -4,28 +4,27 @@ import TestForm from './components/TestForm'
 import About from './components/About';
 
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Routes,
   Route,
-  Link,
 } from 'react-router-dom'
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <Router>
       <Navbar title="TextUtils"/>
       <Routes>
-        <Route exact path={"/Text-Utils"} element={
+        <Route exact path={"/"} element={
             <div className="container">
               <TestForm heading="Enter the text to modify" />
             </div>
         } />
-        <Route exact path={"/Text-Utils/about"} element={<About/>} />
+        <Route exact path={"/about"} element={<About/>} />
         
       </Routes>
           
-    </BrowserRouter>
+    </Router>
 
     {/* <About/> */}
     </>
