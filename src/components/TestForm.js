@@ -5,7 +5,22 @@ export default function TestForm(props) {
   const [text, setText] = useState("")
   const [ans, setAns] = useState("")
   const [WordCount, setWordCount] = useState(0)
-  // setText("here")
+
+  const sendToRev = ()=>{
+    setText(ans)
+    setAns("")
+  }
+
+  const reverseText = ()=>{
+    let arr = []
+    for(let i = text.length-1; i>=0; i-- ){
+      arr.push(text[i])
+    }
+    let reversedText = arr.join("")
+    setText("")
+    setAns(reversedText)
+  }
+
   const copyText = ()=>{
     let copiedText = document.getElementById("result");
     copiedText.select();
@@ -48,6 +63,7 @@ export default function TestForm(props) {
         <button className="btn btn-primary my-3" onClick={handleUpClick}>Convert to Upper Case</button>
         <button className="btn btn-primary mx-3 my-3" onClick={handleLowerClick}>Convert to Lower Case</button>
         <button className="btn btn-primary my-3" onClick={handleCapClick}>Capitalize</button>
+        <button className="btn btn-primary mx-3" onClick={reverseText}>Reverse Text</button>
       </div>
       <div className="container my-5">
         <h3>Result</h3>
@@ -55,7 +71,7 @@ export default function TestForm(props) {
           id="result" rows="3"></textarea>
         <button className="btn btn-primary my-3" onClick={removeItems}>Clear</button>
         <button className="btn btn-primary my-3 mx-2" onClick={copyText}>Copy Text</button>
-
+        <button className="btn btn-primary mx-2" onClick={sendToRev}>Re-evaluate Text</button>
         <h5>No of words: {WordCount}</h5>
         <h5>No of characters: {text.length}</h5>
       </div>
