@@ -25,7 +25,7 @@ export default function About() {
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                          <strong>This website is made in <a rel='noopener' target="_blank" href="http://reactjs.org">React JS</a> with the help of <a target="_blank" href="https://www.youtube.com/@CodeWithHarry">CodeWithHarry</a>'s React JS Course</strong>
+                          <strong>This website is made in <a rel="noreferrer" target="_blank" href="http://reactjs.org">React JS</a> along with <a href="http://getbootstrap.com" rel="noreferrer" target='_blank'>BootStrap</a> with the help of <a rel="noreferrer" target="_blank" href="https://www.youtube.com/@CodeWithHarry">CodeWithHarry</a>'s React JS Course</strong>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default function About() {
                 </h2>
                 <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                          <strong>You can contribute to this website, check on <a rel='noopener' target="_blank" href="https://github.com/ash-dodek/Text-Utils">Github</a></strong>
+                          <strong>You can contribute to this website, check on <a rel="noreferrer" target="_blank" href="https://github.com/ash-dodek/Text-Utils">Github</a></strong>
                     </div>
                 </div>
             </div>
