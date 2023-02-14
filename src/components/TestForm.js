@@ -62,7 +62,7 @@ export default function TestForm(props) {
         <textarea placeholder='Enter text here' onChange={onChange} value={text} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         <button className="btn btn-primary my-3" onClick={handleUpClick}>Convert to Upper Case</button>
         <button className="btn btn-primary mx-3 my-3" onClick={handleLowerClick}>Convert to Lower Case</button>
-        <button className="btn btn-primary my-3" onClick={handleCapClick}>Capitalize</button>
+        <button className="btn btn-primary my-3" disabled onClick={handleCapClick}>Capitalize</button>
         <button className="btn btn-primary mx-3" onClick={reverseText}>Reverse Text</button>
       </div>
       <div className="container my-5">
